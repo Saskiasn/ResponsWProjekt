@@ -1,6 +1,7 @@
 @layer card, form, thumbnail, accordion, detailed-list, call-to-action, subgrid;
 
 
+
 @layer card {
   .card {
 
@@ -31,14 +32,92 @@
   }
 }
 
+/* Min:392px. Max: 1280px */
 @layer form {
-  .form {
-    
+  /* Add padding to the form container */
+  .container.form {
+    padding-top: 10rem; /* Space above the form */
+    padding-bottom: 2rem; /* Space below the form */
+  }
+
+  /* Style for the "Sign Up" heading */
+  .container.form h2 {
+    font-size: 8rem; /* Ensure the correct font size */
+    text-align: left; /* Align text to the left */
+  }
+
+  /* Style for the fieldsets (e.g., Personal Details) */
+  .container.form fieldset {
+    margin-top: 5rem; /* Add space above each fieldset */
+    padding: 1rem; /* Optional: add internal padding for better spacing */
+  }
+
+  /* Style for form inputs and selects */
+  .container.form input,
+  .container.form select {
+    font-size: 1.6rem; /* Adjust the font size */
+    padding: 14px; /* Internal padding for input fields */
+    margin-bottom: 2rem; /* Space below each field */
+    width: 100%; /* Full width */
+    border: 2px solid hsl(var(--hue-1), 20%, 40%); /* Thicker border */
+    border-radius: 8px; /* Rounded corners */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    background-color: white; /* Ensure input fields have a white background */
+  }
+
+  .container.form .buttons {
+    display: flex; /* Arrange buttons horizontally */
+    justify-content: space-between; /* Add spacing between the buttons */
+    gap: 1rem; /* Add a small gap between buttons */
+    margin-top: 2rem; /* Space above the button group */
+  }
+  
+  .container.form .buttons {
+    display: flex; /* Arrange buttons horizontally */
+    justify-content: flex-end; /* Align buttons to the left */
+    gap: 1rem; /* Add space between buttons */
+    margin-top: 2rem; /* Add space above the buttons */
+  }
+  
+  .container.form button {
+    background-color: hsl(220, 60%, 50%); /* Blue color */
+    color: white; /* White text */
+    font-size: 1.2rem; /* Adjust text size */
+    font-weight: bold; /* Bold text */
+    padding: 10px 16px; /* Adjust button size */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+  }
+  
+  .container.form button:hover {
+    background-color: hsl(220, 60%, 40%); /* Slightly darker blue on hover */
+  }
+
+  .container.form label {
+    font-weight: bold; /* Make the text bold */
+    font-size: 1.2rem; /* Optional: Adjust the font size */
+    color: hsl(var(--hue-1), 30%, 20%); /* Optional: Adjust label color */
+  }
+
+  /* Visually hidden helper text */
+  .help {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
   }
 }
 
 @layer subgrid {
   .subgrid {
+
+
   
   }
 }
