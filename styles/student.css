@@ -47,6 +47,13 @@
       70%,
       30%
     ); /* Took this color from the .c1-70-30 class, which was used on "SIGN" part of Sign Up */
+
+      display: grid;
+      /* Dynamically adjust the column layout based on container size */
+      grid-template-columns: repeat(auto-fit, minmax(clamp(0px, 100%, 400px), 1fr));
+      gap: 2rem;
+    
+   
   }
 
   .container.form fieldset:first-of-type {
@@ -56,16 +63,14 @@
   .container.form legend {
     font-size: 3.5rem;
     letter-spacing: 0.01em; /* Adjusted so horizontal spacing matches reference image */
-
   }
 
   .container.form .group {
-    margin-top: 1.6rem;   
-    margin-bottom: 3.5rem; 
+    margin-top: 1.6rem;
+    margin-bottom: 3.5rem;
   }
 
   .container.form label {
-    
     font-weight: 600; /* Make the text bold */
     font-size: 2.3rem; /* Optional: Adjust the font size */
     color: hsl(var(--hue-1), 40%, 30%); /* Optional: Adjust label color */
