@@ -125,6 +125,144 @@
 }
 
 @layer subgrid {
-  .subgrid {
+  /* .subgrid {
+    display: grid;
+    grid-template: 1fr 2fr 3fr 4fr / 1fr 2fr 3fr 4fr;
+    gap: 1rem;
+
+    & * {
+
+      background-color: #26364b;
+      padding: 1rem;   /* Han har glapp mellan 1 rem */
+      border-radius: 0.8rem;
+
+    }
+
+    .a,.b,.c{
+      padding: 1rem;
+      border-radius: 0, 5rem;
+      background-color: #26364b;
+      color: #ffff
+      height: 10rem;
+    }
+
+    .d{
+      display: grid;
+      gap: 1rem;/* Han har glapp mellan 1 rem */
+      padding: 1rem;
+    }
+
+    .d > .e,
+    .d > .f,
+    .d > .g,
+    .d > .h{
+
+      background-color: #c0d4f0;
+      padding: 1rem ;
+    }
+
+    @media screen and (min-with: 392px){
+      .subgrid{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        gap: 1rem;
+      }
+
+      .a {
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .b{
+        grid-column: 1;
+        grid-row: 2;
+      }
+
+      .c {
+        grid-column: 1;
+        grid-row: 3;
+      }
+
+      .d {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+        grid-column: 1;
+        grid-row: 4;
+        height: 21rem;
+      }
+      
+      .d > .e {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .d > .f {
+        grid-column: 2;
+        grid-row: 1; 
+      }
+
+      .d > .g {
+        grid-column: 1;
+        grid-row: 2; 
+      }
+      .d > .h {
+        grid-column: 2;
+        grid-row: 2; 
+      }
+    }
+
+    @media screen and (min-with: 996px){
+
+      .subgrid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr;
+        grid-template-areas: 
+        "a a a a a a a a a b b b b b"
+        "c c c c c c d d d d d d d d"
+        "c c c c c c d d d d d d d d";
+        gap: 1rem;
+      }
+
+      .a {
+        grid-area: a;
+      }
+
+      .b{
+        grid-area: b;
+      }
+
+      .c {
+        grid-area: c;
+      }
+
+      .d {
+        grid-area: d;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+        grid-template-areas: 
+        "c c c c c f f f f f f f"
+        "c c c c c g g g g h h h";
+      }
+
+      .d > .e {
+        grid-area: e;
+      }
+
+      .d > .f {
+        grid-area: f;
+      }
+
+      .d > .g {
+        grid-area: g;
+      }
+      .d > .h {
+        grid-area: h;
+      }
+    }
   }
-}
+
