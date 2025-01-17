@@ -1,45 +1,325 @@
 @layer card, form, thumbnail, accordion, detailed-list, call-to-action, subgrid;
 
 @layer card {
-  .card {}
+  .card {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    border-radius: 8px;
+
+    #retoucher,
+    #webDesigner,
+    #teacher {
+      font-size: 3rem;
+    }
+
+    .ptext {
+      font-size: 1.5rem;
+      letter-spacing: 0.03rem;
+      max-width: 52ch
+    }
+  }
+
+  .Cardheader {
+    background-color: inherit;
+    position: relative;
+    padding: 3rem 1rem;
+    border-radius: 10px;
+    height: 9.8rem;
+  }
+
+  .figure {
+    background-color: inherit;
+    position: absolute;
+    right: 3%;
+    bottom: 0;
+    transform: translate(0, 50%);
+    /* translate: 50% 50% */
+    padding: 0.7rem;
+    border-radius: 100vw;
+
+  }
+
+  .buttonContainer {
+    display: grid;
+    justify-content: end;
+    align-items: center;
+    height: 7rem;
+    padding-right: 1.45rem;
+
+    .button {
+      width: 11rem;
+      height: 3.5rem;
+      border-radius: 6px;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.44rem;
+    }
+  }
 }
 
+
+
 @layer thumbnail {
-  .thumbnail {}
+
+  .thumbnail {
+    border: solid black 4px;
+    border-radius: 11px;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .member-header {
+    position: sticky;
+    background-color: rgb(41, 43, 54);
+    color: hsl(var(--white-hue), 10%, 70%);
+    ;
+    font-size: 19px;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+
+
+
+  }
+
+  .member-picture-container {
+    place-items: center stretch;
+  }
+
+  .member-picture {
+    place-items: center stretch;
+  }
+
+  .member-name {
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  .member-email {
+    margin: 0;
+    color: white !important;
+
+    font-size: 15px;
+    align-self: flex-end;
+  }
+
+  .profile-link {
+    position: absolute;
+  }
+
+  @media (width >=768px) {
+    .thumbnail {
+      justify-items: center;
+      align-items: center;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.1);
+    }
+
+    .thumbnail:hover .member-header {
+      opacity: 1;
+    }
+
+    .member-header {
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+      color: hsl(var(--white-hue), 10%, 55%);
+      ;
+      font-size: 16px;
+      background-color: rgba(0, 0, 0, 0.70);
+
+    }
+
+    .member-picture-container {
+      position: relative;
+    }
+
+    .member-picture-container:hover {}
+
+    .member-picture {
+      position: relative;
+
+    }
+
+    .member-picture:hover {
+      filter: blur(2px);
+      opacity: 0.7;
+    }
+
+  }
+
 }
 
 @layer accordion {
-  .accordion {}
+  .accordion {
+    display: grid;
+    flex-direction: column;
+  }
+
+  .mb-3 {
+    padding-bottom: 0;
+    color: #004b93;
+    text-transform: uppercase;
+    font-size: 4rem;
+  }
+
+  .block {
+    margin-bottom: 1rem;
+    border: 2px solid #004b93;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    flex: 1;
+    padding-right: 1px;
+  }
+
+  .block>summary {
+    background-color: #a3cff4;
+    color: black;
+    padding: 2rem;
+    cursor: pointer;
+    font-family: "Poppins";
+    font-size: 2rem;
+  }
+
+  .block>summary:focus {
+    color: #f8faffea;
+    background-color: #003b73;
+  }
+
+  .content {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    padding: 0.3rem 1rem;
+    margin-top: 1.7rem;
+    padding-right: 3rem;
+    margin-left: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+  }
 }
 
 @layer detailed-list {
-  .detailed-list {}
+  .detailed-list {
+    container-type: inline-size;
+    container-name: detailed-list;
+
+  }
+
+  .dl {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.8rem;
+    position: relative;
+    padding: 1.2rem;
+    margin-left: 1rem;
+  }
+
+  .dt,
+  .dd {
+    position: relative;
+    margin: 0;
+  }
+
+  .dt {
+    font-weight: bolder;
+    color: #004b93;
+    padding-left: 1rem;
+    font-size: 1.6rem;
+    border-left: 1px solid #000000;
+    line-height: 2.5rem;
+    position: relative;
+
+  }
+
+
+  .dd {
+    color: #333333;
+    border-left: 1px solid #000000;
+    padding-left: 1rem;
+    font-size: 1.6rem;
+    font-weight: 2rem;
+    line-height: 2.5rem;
+    padding-right: 0.25rem;
+    position: relative;
+    margin-bottom: 1rem;
+
+  }
+
+  @container (min-width: 715px) and (max-width: 735px) {
+    .dl {
+      display: grid;
+      grid-template-columns: 2, 2fr;
+    }
+
+    .dt {
+      grid-column: 1;
+      padding-right: 1rem;
+      border-left: none;
+      text-align: right;
+      right: 1rem;
+
+    }
+
+    .dd {
+      grid-column: 2;
+      padding-right: 0rem;
+      margin-bottom: 1.5rem;
+
+    }
+  }
+
+  p.text {
+    padding-right: 50px;
+  }
+
 }
 
 @layer call-to-action {
-  .cta {}
+  .cta {
+    background-color: #004b93;
+    color: #f8faffea;
+    padding: 1.5rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    display: block;
+    margin: 1rem auto;
+    cursor: pointer;
+    text-align: center;
+    font-family: "Poppins";
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .cta:hover {
+    background-color: #003b73;
+    color: #003b73;
+  }
 }
 
 /* Min:392px. Max: 1280px */
-@layer card {
-  .card {}
-}
 
-@layer thumbnail {
-  .thumbnail {}
-}
 
-@layer accordion {
-  .accordion {}
-}
 
-@layer detailed-list {
-  .detailed-list {}
-}
 
-@layer call-to-action {
-  .cta {}
-}
+
+
+
+
 
 @layer form {
   .main {
